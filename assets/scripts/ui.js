@@ -47,6 +47,19 @@ const signOutFailure = function () {
   $('#message').text('Sign out failed.')
 }
 
+const addWorkoutSuccess = function (response) {
+  $('#message').text('Workout added!')
+  // console.log(response)
+  store.workout = response.workout
+  console.log(store.workout)
+  console.log('store: ', store)
+  console.log('token: ', store.user.token)
+}
+
+const addWorkoutFailure = function () {
+  $('#message').text('Workout was not added. Try again!')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -55,5 +68,7 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  addWorkoutSuccess,
+  addWorkoutFailure
 }

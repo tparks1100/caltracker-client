@@ -55,6 +55,10 @@ const onAddWorkout = function (event) {
   const form = event.target
   const formData = getFormFields(form)
   console.log(formData)
+
+  api.addWorkout(formData)
+    .then(ui.addWorkoutSuccess)
+    .catch(ui.addWorkoutFailure)
 }
 
 module.exports = {
