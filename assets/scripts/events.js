@@ -49,9 +49,18 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const onAddWorkout = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormFields(form)
+  console.log(formData)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onAddWorkout
 }
