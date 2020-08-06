@@ -52,10 +52,35 @@ const addWorkout = function (formData) {
   })
 }
 
+const viewWorkouts = function () {
+  return $.ajax({
+    url: config.apiUrl + '/workouts',
+    method: 'GET',
+    data: {
+      user: store.user.id
+    },
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const deleteWorkout = (workoutId) => {
+  return $.ajax({
+    url: config.apiUrl + '/workouts/' + workoutId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  addWorkout
+  addWorkout,
+  viewWorkouts,
+  deleteWorkout
 }

@@ -17,4 +17,6 @@ $(() => {
 
   // Workout Event Listeners
   $('#add-workout').on('submit', authEvents.onAddWorkout)
+  $('#view-workouts').on('click', authEvents.onViewWorkouts)
+  $('.content').on('click', '.delete-btn', authEvents.onDeleteWorkout)
 })

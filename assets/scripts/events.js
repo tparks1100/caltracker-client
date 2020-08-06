@@ -61,10 +61,27 @@ const onAddWorkout = function (event) {
     .catch(ui.addWorkoutFailure)
 }
 
+const onViewWorkouts = function (event) {
+  event.preventDefault()
+  api.viewWorkouts()
+    .then(ui.viewWorkoutsSuccess)
+    .catch(ui.viewWorkoutsFailure)
+}
+
+const onDeleteWorkout = (event) => {
+  event.preventDefault()
+  const id = $(event.target).closest('section').data('id')
+  api.deleteBook(id)
+    .then(() => onViewWorkouts(event))
+    .catch(ui.failure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onAddWorkout
+  onAddWorkout,
+  onViewWorkouts,
+  onDeleteWorkout
 }

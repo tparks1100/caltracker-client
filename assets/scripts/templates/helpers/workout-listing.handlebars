@@ -1,0 +1,14 @@
+{{#each workouts as |workout|}}
+  {{log workout}}
+  <section class ='workout-section' data-id="{{workout.id}}">
+    <h6>Workout Category: {{workout.id}}</h6>
+    <h6>Targeted Body Area:</h6>
+    <h6>Time Spent:</h6>
+    <h6>Calories Burned:</h6>
+    <h6>Workout Date:</h6>
+
+    <button class="btn btn-danger delete-btn" data-id="{{workout.id}}">Delete Workout!</button>
+
+  </section>
+
+{{/each}}

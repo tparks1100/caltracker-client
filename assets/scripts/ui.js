@@ -2,6 +2,8 @@
 
 const store = require('./store')
 
+const getWorkoutsTemplate = require('./templates/helpers/workout-listing.handlebars')
+
 const signUpSuccess = function () {
   $('#message').text('Successfully signed up!')
   $('#sign-up')[0].reset()
@@ -50,7 +52,7 @@ const signOutFailure = function () {
 const addWorkoutSuccess = function (response) {
   $('#message').text('Workout added!')
   // console.log(response)
-  store.workout = response.workout
+  console.log(store.workout = response.workout)
   console.log(store.workout)
   console.log('store: ', store)
   console.log('token: ', store.user.token)
@@ -58,6 +60,24 @@ const addWorkoutSuccess = function (response) {
 
 const addWorkoutFailure = function () {
   $('#message').text('Workout was not added. Try again!')
+}
+
+// const viewWorkoutsSuccess = function (response) {
+//   console.log(store.workout = response.workout)
+//   console.log('This is success button', response)
+//   console.log(response)
+//   const getWorkoutsHtml = getWorkoutsTemplate({ workouts: response.workouts })
+//   $('#display-workouts').text(JSON.stringify(response))
+// }
+
+const viewWorkoutsSuccess = (response) => {
+  console.log(response)
+  const getWorkoutsHtml = getWorkoutsTemplate({ workouts: response.workouts })
+  $('.content').append(getWorkoutsHtml)
+}
+
+const viewWorkoutsFailure = function () {
+  $('.content').text('Unable to view workouts')
 }
 
 module.exports = {
@@ -70,5 +90,7 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   addWorkoutSuccess,
-  addWorkoutFailure
+  addWorkoutFailure,
+  viewWorkoutsSuccess,
+  viewWorkoutsFailure
 }
