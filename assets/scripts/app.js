@@ -19,4 +19,5 @@ $(() => {
   $('#add-workout').on('submit', authEvents.onAddWorkout)
   $('#view-workouts').on('click', authEvents.onViewWorkouts)
   $('.content').on('click', '.delete-btn', authEvents.onDeleteWorkout)
+  $('.content').on('click', '.update-btn', authEvents.onUpdateWorkout)
 })

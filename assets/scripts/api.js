@@ -75,6 +75,18 @@ const deleteWorkout = (workoutId) => {
   })
 }
 
+const updateWorkout = function (workoutId, formData) {
+  console.log(workoutId, formData)
+  return $.ajax({
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/workouts/' + workoutId,
+    method: 'PATCH',
+    data: formData
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -82,5 +94,6 @@ module.exports = {
   signOut,
   addWorkout,
   viewWorkouts,
-  deleteWorkout
+  deleteWorkout,
+  updateWorkout
 }

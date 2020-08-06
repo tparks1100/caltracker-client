@@ -1,13 +1,14 @@
 {{#each workouts as |workout|}}
   {{log workout}}
-  <section class ='workout-section' data-id="{{workout.id}}">
-    <h6>Workout Category: {{workout.id}}</h6>
-    <h6>Targeted Body Area:</h6>
-    <h6>Time Spent:</h6>
-    <h6>Calories Burned:</h6>
-    <h6>Workout Date:</h6>
+  <section class ='workout-section' data-id="{{workout._id}}">
+    <h6>Workout Category: {{workout.workoutCategory}}</h6>
+    <h6>Targeted Body Area: {{workout.targetedBodyArea}}</h6>
+    <h6>Time Spent: {{workout.timeSpent}}</h6>
+    <h6>Calories Burned: {{workout.caloriesBurned}}</h6>
+    <h6>Workout Date: {{workout.workoutDate}}</h6>
 
-    <button class="btn btn-danger delete-btn" data-id="{{workout.id}}">Delete Workout!</button>
+    <button class="btn btn-primary update-btn" data-id="{{workout._id}}">Update Workout</button>
+    <button class="btn btn-danger delete-btn" data-id="{{workout._id}}">Delete Workout</button>
 
   </section>
 

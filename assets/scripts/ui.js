@@ -73,12 +73,21 @@ const addWorkoutFailure = function () {
 const viewWorkoutsSuccess = (response) => {
   console.log(response)
   const getWorkoutsHtml = getWorkoutsTemplate({ workouts: response.workouts })
+  $('.content').empty()
   $('.content').append(getWorkoutsHtml)
 }
 
 const viewWorkoutsFailure = function () {
   $('.content').text('Unable to view workouts')
 }
+
+// const updateWorkoutSuccess = function () {
+//
+// }
+//
+// const deleteWorkoutsFailure = function () {
+//   $('.content').text('Unable to delete workout')
+// }
 
 module.exports = {
   signUpSuccess,
@@ -93,4 +102,6 @@ module.exports = {
   addWorkoutFailure,
   viewWorkoutsSuccess,
   viewWorkoutsFailure
+  // deleteWorkoutSuccess,
+  // deleteWorkoutsFailure
 }

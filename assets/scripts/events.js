@@ -71,9 +71,23 @@ const onViewWorkouts = function (event) {
 const onDeleteWorkout = (event) => {
   event.preventDefault()
   const id = $(event.target).closest('section').data('id')
-  api.deleteBook(id)
-    .then(() => onViewWorkouts(event))
-    .catch(ui.failure)
+  console.log(id)
+  api.deleteWorkout(id)
+    .then(ui.deleteWorkoutSuccess)
+    .catch(ui.deleteWorkoutFailure)
+  $('.content').empty()
+}
+
+const onUpdateWorkout = (event) => {
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormFields(form)
+  const id = $(event.target).closest('section').data('id')
+  console.log(id)
+  api.updateWorkout(id, formData)
+    .then(ui.updateWorkoutSuccess)
+    .catch(ui.updateWorkoutFailure)
 }
 
 module.exports = {
@@ -83,5 +97,6 @@ module.exports = {
   onSignOut,
   onAddWorkout,
   onViewWorkouts,
-  onDeleteWorkout
+  onDeleteWorkout,
+  onUpdateWorkout
 }
