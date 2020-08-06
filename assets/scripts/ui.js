@@ -4,8 +4,11 @@ const store = require('./store')
 
 const getWorkoutsTemplate = require('./templates/helpers/workout-listing.handlebars')
 
+$('.authenticated').hide()
+
 const signUpSuccess = function () {
   $('#message').text('Successfully signed up!')
+  $('.unauthenticated1').hide()
   $('#sign-up')[0].reset()
 }
 
@@ -22,7 +25,8 @@ const signInSuccess = function (response) {
   console.log('token: ', store.user.token)
 
   $('.authenticated').show()
-  $('.unauthenticated').hide()
+  $('.unauthenticated1').hide()
+  $('.unauthenticated2').hide()
   $('#sign-in')[0].reset()
 }
 
@@ -41,8 +45,10 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function () {
   $('#message').text('Signed you out!')
-  $('.unauthenticated').show()
+  $('.unauthenticated1').show()
+  $('.unauthenticated2').show()
   $('.authenticated').hide()
+  $('.content').hide()
 }
 
 const signOutFailure = function () {
@@ -75,6 +81,7 @@ const viewWorkoutsSuccess = (response) => {
   const getWorkoutsHtml = getWorkoutsTemplate({ workouts: response.workouts })
   $('.content').empty()
   $('.content').append(getWorkoutsHtml)
+  $('.content').show()
 }
 
 const viewWorkoutsFailure = function () {

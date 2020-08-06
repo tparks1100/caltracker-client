@@ -13,42 +13,71 @@
     </head>
     <body>
       <div class="container">
-      <h1>CalTracker</h1>
+      <h1 class="page-header">CalTracker</h1>
 
       <p id="message"></p>
 
-      <div class="unauthenticated">
-        <label id="label1">New User? Sign up! Returning? Sign in!</label>
+      <div class="unauthenticated1">
 
-        <form id="sign-up">
+        <form id="sign-up" action="" style="width: 500px; margin: auto">
+          <label for="email">Email:</label>
+          <input name="credentials[email]" type="email" id="email" class="form-control">
+          <label for="password">Password:</label>
+          <input name="credentials[password]" type="password" id="password" class="form-control">
+          <label for="confirmpassword">Confirm Password:</label>
+          <input name="credentials[password_confirmation]" id="confirmpassword" type="password" class="form-control">
+          <button type="submit" class="btn-outline-primary form-control">Sign Up</button>
+        </form>
+
+      </div>
+
+        <!-- <form id="sign-up">
           <input name="credentials[email]" placeholder="email here" type="email">
           <input name="credentials[password]" placeholder="password here" type="password">
           <input name="credentials[password_confirmation]" placeholder="confirm password here" type="password">
-          <button type="submit">Sign Up</button>
+          <button type="submit" class="btn-outline-primary">Sign Up</button>
+        </form> -->
+
+    <div class="unauthenticated2">
+
+        <form id="sign-in" action="" style="width: 500px; margin: auto">
+          <label for="email1">Email:</label>
+          <input name="credentials[email]" type="email" id="email1" class="form-control">
+          <label for="password1">Password:</label>
+          <input name="credentials[password]" type="password" id="password1" class="form-control">
+          <button type="submit" class="btn-outline-primary form-control">Sign In</button>
         </form>
 
-        <form id="sign-in">
+        <!-- <form id="sign-in">
           <input name="credentials[email]" placeholder="email here" type="email">
           <input name="credentials[password]" placeholder="password here" type="password">
-          <button type="submit">Sign In</button>
-        </form>
+          <button type="submit" class="btn-outline-primary">Sign In</button>
+        </form> -->
       </div>
 
       <div class="authenticated">
-        <form id="change-password">
+
+        <form id="change-password" action="" style="width: 500px; margin: auto">
+          <label for="oldpassword">Old Password:</label>
+          <input name="passwords[old]" type="password" id="oldpassword" class="form-control">
+          <label for="newpassword">New Password:</label>
+          <input name="passwords[new]" type="password" id="newpassword" class="form-control">
+          <button type="submit" class="btn-outline-primary form-control">Change Password</button>
+        </form>
+
+        <!-- <form id="change-password">
           <input name="passwords[old]" placeholder="old password" type="password">
           <input name="passwords[new]" placeholder="new password" type="password">
-          <button type="submit">Change Password</button>
+          <button type="submit" class="btn-outline-primary">Change Password</button>
+        </form> -->
+
+        <form id="sign-out" style="width: 500px; margin: auto">
+          <button type="submit" style="width: 500px; margin: auto" class="btn-outline-primary form-control">Sign Out</button>
         </form>
 
-        <form id="sign-out">
-          <button type="submit">Sign Out</button>
-        </form>
-      </div>
-
-      <form id="add-workout">
+      <form id="add-workout" action="" style="width: 500px; margin: auto">
         <label for="workoutCategory">Enter workout category:</label>
-      <select name="workout[workoutCategory]">
+      <select name="workout[workoutCategory]" class="form-control">
         <option value="HIIT Training">HIIT Training</option>
         <option value="Outdoor Run">Outdoor Run</option>
         <option value="Strength Training">Strength Training</option>
@@ -102,7 +131,7 @@
       </select>
 
         <label for="workoutTargetedBodyArea">Enter targeted body area:</label>
-      <select name="workout[targetedBodyArea]">
+      <select name="workout[targetedBodyArea]" class="form-control">
         <option value="Upper Body">Full Body</option>
         <option value="Upper Body">Upper Body</option>
         <option value="Lower Body">Lower Body</option>
@@ -114,25 +143,29 @@
         <option value="Upper Body">Upper Body</option>
     </select>
         <label for="workoutTimeSpent">Enter time spent in minutes:</label>
-        <input name="workout[timeSpent]" placeholder="Enter time spent on workout" type="number">
+        <input name="workout[timeSpent]" placeholder="Enter time spent on workout" type="number" class="form-control">
 
         <label for="workoutCaloriesBurned">Enter calories burned:</label>
-        <input name="workout[caloriesBurned]" placeholder="Enter total calories burned" type="number">
+        <input name="workout[caloriesBurned]" placeholder="Enter total calories burned" type="number" class="form-control">
 
         <label for="workoutDate">Enter date:</label>
-        <input name="workout[workoutDate]" placeholder="Enter date of workout" type="date">
+        <input name="workout[workoutDate]" placeholder="Enter date of workout" type="date" class="form-control">
 
-        <button type="submit">Add Workout</button>
+        <button type="submit" class="btn-outline-primary form-control">Add Workout</button>
       </form>
 
       <form id="view-workouts">
-        <button type="submit">View my workouts!</button>
+        <button type="submit" style="width: 500px; margin: auto" class="btn-outline-primary form-control" >View my workouts!</button>
       </form>
+    </div>
 
+    <!-- <div class="workouts">
       <p id="display-workouts"></p>
+    </div> -->
 
       <main>
         <div id="content" class="content"></div>
       </main>
+    </div>
     </body>
 </html>
