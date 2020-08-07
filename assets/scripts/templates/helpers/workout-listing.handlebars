@@ -7,7 +7,7 @@
     <h6>Calories Burned: {{workout.caloriesBurned}}</h6>
     <h6>Workout Date: {{workout.workoutDate}}</h6>
 
-    <button class="btn btn-outline-success update-btn" data-id="{{workout._id}}">Update Workout</button>
+    <button class="btn btn-outline-success update-btn" data-id="{{workout._id}}"<a href="/workouts/id" data-toggle="modal" data-target="#myModal3"</a>Update Workout</button>
     <div class="modal fade modal2" id="myModal3">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -16,60 +16,10 @@
             <p id="add-message"></p>
           </div>
           <div class="modal-body">
-            <form class=".update-btn" action="" style="width: 500px; margin: auto">
+            <form id="update-workout" action="" style="width: 500px; margin: auto">
               <label for="workoutCategory">Enter workout category:</label>
             <select name="workout[workoutCategory]" class="form-control">
-              <option value="" disabled selected hidden>Select workout category</option>
-              <option value="HIIT Training">HIIT Training</option>
-              <option value="Outdoor Run">Outdoor Run</option>
-              <option value="Strength Training">Strength Training</option>
-              <option value="Jump Rope">Jump Rope</option>
-              <option value="Functional Training">Functional Training</option>
-              <option value="Outdoor Walk">Outdoor Walk</option>
-              <option value="Core Training">Core Training</option>
-              <option value="Flexibility">Flexibility</option>
-              <option value="Indoor Cycle">Indoor Cycle</option>
-              <option value="CrossFit">CrossFit</option>
-              <option value="Track & Field">Track & Field</option>
-              <option value="Yoga">Yoga</option>
-              <option value="Outdoor Cycle">Outdoor Cycle</option>
-              <option value="Mixed Cardio">Mixed Cardio</option>
-              <option value="Volleyball">Volleyball</option>
-              <option value="Stair Stepper">Stair Stepper</option>
-              <option value="Indoor Walk">Indoor Walk</option>
-              <option value="Basketball">Basketball</option>
-              <option value="Skating">Skating</option>
-              <option value="Indoor Run">Indoor Run</option>
-              <option value="Hiking">Hiking</option>
-              <option value="Dance">Dance</option>
-              <option value="Elliptical">Elliptical</option>
-              <option value="Rowing">Rowing</option>
-              <option value="Swim">Swim</option>
-              <option value="Badminton">Badminton</option>
-              <option value="Barre">Barre</option>
-              <option value="Basketball">Basketball</option>
-              <option value="Kickboxing">Kickboxing</option>
-              <option value="Pilates">Pilates</option>
-              <option value="Soccer">Basketball</option>
-              <option value="Surfing">Surfing</option>
-              <option value="Tennis">Tennis</option>
-              <option value="Baseball">Baseball</option>
-              <option value="Football">Football</option>
-              <option value="Bowling">Bowling</option>
-              <option value="Boxing">Boxing</option>
-              <option value="Climbing">Climbing</option>
-              <option value="Gymnastics">Gymnastics</option>
-              <option value="Handball">Handball</option>
-              <option value="Hockey">Hockey</option>
-              <option value="Lacrosse">Sking</option>
-              <option value="Martial Arts">Martial Arts</option>
-              <option value="Racquetball">Racquetball</option>
-              <option value="Rugby">Rugby</option>
-              <option value="Snowboarding">Snowboarding</option>
-              <option value="Softball">Softball</option>
-              <option value="Stairs">Stairs</option>
-              <option value="Wrestling">Wrestling</option>
-              <option value="Water Polo">Water Polo</option>
+              <option data-id="{{workout._id}}" value= {{workout.workoutCategory}}></option>
             </select>
 
               <label for="workoutTargetedBodyArea">Enter targeted body area:</label>
@@ -92,6 +42,7 @@
 
               <label for="workoutDate">Enter date:</label>
               <input name="workout[workoutDate]" placeholder="Enter date of workout" type="date" class="form-control">
+              <button type="submit" style="background-color: #fa877f;" class="form-control">Update Workout</button>
             </form>
           </div>
           <div class="modal-footer">

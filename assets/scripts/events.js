@@ -85,7 +85,8 @@ const onUpdateWorkout = (event) => {
   const formData = getFormFields(form)
   const id = $(event.target).closest('section').data('id')
   console.log(id)
-  api.updateWorkout(formData)
+  console.log('this is in update workout ', formData)
+  api.updateWorkout(id, formData)
     .then(ui.updateWorkoutSuccess)
     .catch(ui.updateWorkoutFailure)
 }
