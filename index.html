@@ -13,7 +13,7 @@
     </head>
     <body>
 
-      <div class="modal fade" id="myModal">
+      <div class="modal fade modal1" id="myModal">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -26,7 +26,7 @@
                 <input name="passwords[old]" type="password" id="oldpassword" class="form-control">
                 <label for="newpassword">New Password:</label>
                 <input name="passwords[new]" type="password" id="newpassword" class="form-control">
-                <button type="submit" class="btn-outline-primary form-control">Change Password</button>
+                <button type="submit" style="background-color: #fa877f;" class=" form-control">Change Password</button>
               </form>
             </div>
             <div class="modal-footer">
@@ -35,17 +35,18 @@
           </div>
         </div>
 
-        <div class="modal fade" id="myModal2">
+        <div class="modal fade modal2" id="myModal2">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
               <div class="modal-header">
                 <h1>Add New Workout</h1>
-                <p id="change-message2"></p>
+                <p id="add-message"></p>
               </div>
               <div class="modal-body">
                 <form id="add-workout" action="" style="width: 500px; margin: auto">
                   <label for="workoutCategory">Enter workout category:</label>
                 <select name="workout[workoutCategory]" class="form-control">
+                  <option value="" disabled selected hidden>Select workout category</option>
                   <option value="HIIT Training">HIIT Training</option>
                   <option value="Outdoor Run">Outdoor Run</option>
                   <option value="Strength Training">Strength Training</option>
@@ -100,7 +101,8 @@
 
                   <label for="workoutTargetedBodyArea">Enter targeted body area:</label>
                 <select name="workout[targetedBodyArea]" class="form-control">
-                  <option value="Upper Body">Full Body</option>
+                  <option value="" disabled selected hidden>Select targeted body area</option>
+                  <option value="Full Body">Full Body</option>
                   <option value="Upper Body">Upper Body</option>
                   <option value="Lower Body">Lower Body</option>
                   <option value="Back">Back</option>
@@ -108,7 +110,6 @@
                   <option value="Chest">Chest</option>
                   <option value="Shoulders">Shoulders</option>
                   <option value="Glutes">Glutes</option>
-                  <option value="Upper Body">Upper Body</option>
               </select>
                   <label for="workoutTimeSpent">Enter time spent in minutes:</label>
                   <input name="workout[timeSpent]" placeholder="Enter time spent on workout" type="number" class="form-control">
@@ -119,7 +120,7 @@
                   <label for="workoutDate">Enter date:</label>
                   <input name="workout[workoutDate]" placeholder="Enter date of workout" type="date" class="form-control">
 
-                  <button type="submit" class="btn-outline-primary form-control">Add Workout</button>
+                  <button type="submit" style="background-color: #fa877f;" class=" form-control">Add Workout</button>
                 </form>
               </div>
               <div class="modal-footer">
@@ -158,53 +159,41 @@
       <div class="container">
       <h1 class="page-header">CalTracker</h1>
 
-
+      <p id="sign-out-message"></p>
       <p id="message"></p>
 
       <div class="unauthenticated1">
-
-        <form id="sign-up" action="" style="width: 500px; margin: auto">
+        <div class="row">
+          <div class="span6">
+        <form class="form-horizontal signup" id="sign-up" action="" style="width: 500px; margin: auto">
           <label for="email">Email:</label>
           <input name="credentials[email]" type="email" id="email" class="form-control">
           <label for="password">Password:</label>
           <input name="credentials[password]" type="password" id="password" class="form-control">
           <label for="confirmpassword">Confirm Password:</label>
           <input name="credentials[password_confirmation]" id="confirmpassword" type="password" class="form-control">
-          <button type="submit" class="btn-outline-primary form-control">Sign Up</button>
+          <button type="submit" style="background-color: #fa877f"class=" form-control">Sign Up</button>
         </form>
-
       </div>
-
-    <div class="unauthenticated2">
-
-        <form id="sign-in" action="" style="width: 500px; margin: auto">
+          <div class="span6">
+        <form class="form-horizontal signin" id="sign-in" action="" style="width: 500px; margin: auto">
           <label for="email1">Email:</label>
           <input name="credentials[email]" type="email" id="email1" class="form-control">
           <label for="password1">Password:</label>
           <input name="credentials[password]" type="password" id="password1" class="form-control">
-          <button type="submit" class="btn-outline-primary form-control">Sign In</button>
+          <button type="submit" style="background-color: #fa877f" class="form-control">Sign In</button>
         </form>
-
+          </div>
+        </div>
       </div>
 
       <div class="authenticated">
 
-        <!-- <form id="change-password" action="" style="width: 500px; margin: auto">
-          <label for="oldpassword">Old Password:</label>
-          <input name="passwords[old]" type="password" id="oldpassword" class="form-control">
-          <label for="newpassword">New Password:</label>
-          <input name="passwords[new]" type="password" id="newpassword" class="form-control">
-        </form> -->
-
 
       <form id="view-workouts">
-        <button type="submit" style="width: 500px; margin: auto" class="btn-outline-primary form-control" >View my workouts!</button>
+        <button type="submit" style="width: 500px; margin: auto; background-color: #fa877f;" class="btn-outline-primary form-control" >View my workouts!</button>
       </form>
     </div>
-
-    <!-- <div class="workouts">
-      <p id="display-workouts"></p>
-    </div> -->
 
       <main>
         <div id="content" class="content"></div>

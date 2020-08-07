@@ -70,12 +70,12 @@ const onViewWorkouts = function (event) {
 
 const onDeleteWorkout = (event) => {
   event.preventDefault()
-  const id = $(event.target).closest('section').data('id')
-  console.log(id)
-  api.deleteWorkout(id)
-    .then(ui.deleteWorkoutSuccess)
-    .catch(ui.deleteWorkoutFailure)
-  $('.content').empty()
+  const workoutId = $(event.target).closest('section').data('id')
+  console.log(workoutId)
+  api.deleteWorkout(workoutId)
+    .then(ui.updateWorkoutSuccess)
+    .then(() => onViewWorkouts(event))
+    .catch(ui.updateWorkoutFailure)
 }
 
 const onUpdateWorkout = (event) => {
@@ -85,7 +85,7 @@ const onUpdateWorkout = (event) => {
   const formData = getFormFields(form)
   const id = $(event.target).closest('section').data('id')
   console.log(id)
-  api.updateWorkout(id, formData)
+  api.updateWorkout(formData)
     .then(ui.updateWorkoutSuccess)
     .catch(ui.updateWorkoutFailure)
 }

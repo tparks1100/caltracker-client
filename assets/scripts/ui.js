@@ -28,6 +28,7 @@ const signInSuccess = function (response) {
   $('.unauthenticated1').hide()
   $('.unauthenticated2').hide()
   $('#sign-in')[0].reset()
+  $('#view-workouts').show()
 }
 
 const signInFailure = function () {
@@ -44,11 +45,11 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function () {
-  $('#message').text('Signed you out!')
+  $('message').text('Signed you out!')
   $('.unauthenticated1').show()
   $('.unauthenticated2').show()
-  $('.authenticated').hide()
   $('.content').hide()
+  $('#view-workouts').hide()
 }
 
 const signOutFailure = function () {
@@ -56,25 +57,19 @@ const signOutFailure = function () {
 }
 
 const addWorkoutSuccess = function (response) {
-  $('#change-message2').text('Workout added!')
+  $('#add-message').text('Workout added!')
   // console.log(response)
   console.log(store.workout = response.workout)
   console.log(store.workout)
   console.log('store: ', store)
   console.log('token: ', store.user.token)
+
+  $('#add-workout')[0].reset()
 }
 
 const addWorkoutFailure = function () {
-  $('#change-message2').text('Workout was not added. Try again!')
+  $('#add-message').text('Workout was not added. Try again!')
 }
-
-// const viewWorkoutsSuccess = function (response) {
-//   console.log(store.workout = response.workout)
-//   console.log('This is success button', response)
-//   console.log(response)
-//   const getWorkoutsHtml = getWorkoutsTemplate({ workouts: response.workouts })
-//   $('#display-workouts').text(JSON.stringify(response))
-// }
 
 const viewWorkoutsSuccess = (response) => {
   console.log(response)
@@ -87,14 +82,6 @@ const viewWorkoutsSuccess = (response) => {
 const viewWorkoutsFailure = function () {
   $('.content').text('Unable to view workouts')
 }
-
-// const updateWorkoutSuccess = function () {
-//
-// }
-//
-// const deleteWorkoutsFailure = function () {
-//   $('.content').text('Unable to delete workout')
-// }
 
 module.exports = {
   signUpSuccess,
