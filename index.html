@@ -13,40 +13,136 @@
     </head>
     <body>
 
-      <!-- <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1>Change Password</h1>
+              <p id="change-message"></p>
+            </div>
+            <div class="modal-body">
+              <form id="change-password" action="">
+                <label for="oldpassword">Old Password:</label>
+                <input name="passwords[old]" type="password" id="oldpassword" class="form-control">
+                <label for="newpassword">New Password:</label>
+                <input name="passwords[new]" type="password" id="newpassword" class="form-control">
+                <button type="submit" class="btn-outline-primary form-control">Change Password</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+          </div>
+        </div>
 
-        <a href="#" class="navbar-brand"></a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarmenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarmenu">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a href="#" class="nav-link">Add New Workout</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Change Password</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Sign Out</a>
-            </li>
-          </ul>
-      </div>
+        <div class="modal fade" id="myModal2">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1>Add New Workout</h1>
+                <p id="change-message2"></p>
+              </div>
+              <div class="modal-body">
+                <form id="add-workout" action="" style="width: 500px; margin: auto">
+                  <label for="workoutCategory">Enter workout category:</label>
+                <select name="workout[workoutCategory]" class="form-control">
+                  <option value="HIIT Training">HIIT Training</option>
+                  <option value="Outdoor Run">Outdoor Run</option>
+                  <option value="Strength Training">Strength Training</option>
+                  <option value="Jump Rope">Jump Rope</option>
+                  <option value="Functional Training">Functional Training</option>
+                  <option value="Outdoor Walk">Outdoor Walk</option>
+                  <option value="Core Training">Core Training</option>
+                  <option value="Flexibility">Flexibility</option>
+                  <option value="Indoor Cycle">Indoor Cycle</option>
+                  <option value="CrossFit">CrossFit</option>
+                  <option value="Track & Field">Track & Field</option>
+                  <option value="Yoga">Yoga</option>
+                  <option value="Outdoor Cycle">Outdoor Cycle</option>
+                  <option value="Mixed Cardio">Mixed Cardio</option>
+                  <option value="Volleyball">Volleyball</option>
+                  <option value="Stair Stepper">Stair Stepper</option>
+                  <option value="Indoor Walk">Indoor Walk</option>
+                  <option value="Basketball">Basketball</option>
+                  <option value="Skating">Skating</option>
+                  <option value="Indoor Run">Indoor Run</option>
+                  <option value="Hiking">Hiking</option>
+                  <option value="Dance">Dance</option>
+                  <option value="Elliptical">Elliptical</option>
+                  <option value="Rowing">Rowing</option>
+                  <option value="Swim">Swim</option>
+                  <option value="Badminton">Badminton</option>
+                  <option value="Barre">Barre</option>
+                  <option value="Basketball">Basketball</option>
+                  <option value="Kickboxing">Kickboxing</option>
+                  <option value="Pilates">Pilates</option>
+                  <option value="Soccer">Basketball</option>
+                  <option value="Surfing">Surfing</option>
+                  <option value="Tennis">Tennis</option>
+                  <option value="Baseball">Baseball</option>
+                  <option value="Football">Football</option>
+                  <option value="Bowling">Bowling</option>
+                  <option value="Boxing">Boxing</option>
+                  <option value="Climbing">Climbing</option>
+                  <option value="Gymnastics">Gymnastics</option>
+                  <option value="Handball">Handball</option>
+                  <option value="Hockey">Hockey</option>
+                  <option value="Lacrosse">Sking</option>
+                  <option value="Martial Arts">Martial Arts</option>
+                  <option value="Racquetball">Racquetball</option>
+                  <option value="Rugby">Rugby</option>
+                  <option value="Snowboarding">Snowboarding</option>
+                  <option value="Softball">Softball</option>
+                  <option value="Stairs">Stairs</option>
+                  <option value="Wrestling">Wrestling</option>
+                  <option value="Water Polo">Water Polo</option>
+                </select>
 
-      </nav> -->
+                  <label for="workoutTargetedBodyArea">Enter targeted body area:</label>
+                <select name="workout[targetedBodyArea]" class="form-control">
+                  <option value="Upper Body">Full Body</option>
+                  <option value="Upper Body">Upper Body</option>
+                  <option value="Lower Body">Lower Body</option>
+                  <option value="Back">Back</option>
+                  <option value="Triceps">Triceps</option>
+                  <option value="Chest">Chest</option>
+                  <option value="Shoulders">Shoulders</option>
+                  <option value="Glutes">Glutes</option>
+                  <option value="Upper Body">Upper Body</option>
+              </select>
+                  <label for="workoutTimeSpent">Enter time spent in minutes:</label>
+                  <input name="workout[timeSpent]" placeholder="Enter time spent on workout" type="number" class="form-control">
+
+                  <label for="workoutCaloriesBurned">Enter calories burned:</label>
+                  <input name="workout[caloriesBurned]" placeholder="Enter total calories burned" type="number" class="form-control">
+
+                  <label for="workoutDate">Enter date:</label>
+                  <input name="workout[workoutDate]" placeholder="Enter date of workout" type="date" class="form-control">
+
+                  <button type="submit" class="btn-outline-primary form-control">Add Workout</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+              </div>
+            </div>
+            </div>
+          </div>
+
 
       <div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
           <div class="bg-light p-4">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="#" class="nav-link">Add New Workout</a>
+                <a href="/workouts" data-toggle="modal" data-target="#myModal2" class="nav-link">Add New Workout</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">Change Password</a>
+                <a href="/change-password" data-toggle="modal" data-target="#myModal" class="nav-link">Change Password</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">Sign Out</a>
+                <form id="sign-out">
+                <a href="/sign-out" class="nav-link sign-out">Sign Out</a>
+              </form>
               </li>
             </ul>
           </div>
@@ -56,10 +152,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
         </nav>
+
       </div>
 
       <div class="container">
       <h1 class="page-header">CalTracker</h1>
+
 
       <p id="message"></p>
 
@@ -77,13 +175,6 @@
 
       </div>
 
-        <!-- <form id="sign-up">
-          <input name="credentials[email]" placeholder="email here" type="email">
-          <input name="credentials[password]" placeholder="password here" type="password">
-          <input name="credentials[password_confirmation]" placeholder="confirm password here" type="password">
-          <button type="submit" class="btn-outline-primary">Sign Up</button>
-        </form> -->
-
     <div class="unauthenticated2">
 
         <form id="sign-in" action="" style="width: 500px; margin: auto">
@@ -94,111 +185,17 @@
           <button type="submit" class="btn-outline-primary form-control">Sign In</button>
         </form>
 
-        <!-- <form id="sign-in">
-          <input name="credentials[email]" placeholder="email here" type="email">
-          <input name="credentials[password]" placeholder="password here" type="password">
-          <button type="submit" class="btn-outline-primary">Sign In</button>
-        </form> -->
       </div>
 
       <div class="authenticated">
 
-        <form id="change-password" action="" style="width: 500px; margin: auto">
+        <!-- <form id="change-password" action="" style="width: 500px; margin: auto">
           <label for="oldpassword">Old Password:</label>
           <input name="passwords[old]" type="password" id="oldpassword" class="form-control">
           <label for="newpassword">New Password:</label>
           <input name="passwords[new]" type="password" id="newpassword" class="form-control">
-          <button type="submit" class="btn-outline-primary form-control">Change Password</button>
-        </form>
-
-        <!-- <form id="change-password">
-          <input name="passwords[old]" placeholder="old password" type="password">
-          <input name="passwords[new]" placeholder="new password" type="password">
-          <button type="submit" class="btn-outline-primary">Change Password</button>
         </form> -->
 
-        <form id="sign-out" style="width: 500px; margin: auto">
-          <button type="submit" style="width: 500px; margin: auto" class="btn-outline-primary form-control">Sign Out</button>
-        </form>
-
-      <form id="add-workout" action="" style="width: 500px; margin: auto">
-        <label for="workoutCategory">Enter workout category:</label>
-      <select name="workout[workoutCategory]" class="form-control">
-        <option value="HIIT Training">HIIT Training</option>
-        <option value="Outdoor Run">Outdoor Run</option>
-        <option value="Strength Training">Strength Training</option>
-        <option value="Jump Rope">Jump Rope</option>
-        <option value="Functional Training">Functional Training</option>
-        <option value="Outdoor Walk">Outdoor Walk</option>
-        <option value="Core Training">Core Training</option>
-        <option value="Flexibility">Flexibility</option>
-        <option value="Indoor Cycle">Indoor Cycle</option>
-        <option value="CrossFit">CrossFit</option>
-        <option value="Track & Field">Track & Field</option>
-        <option value="Yoga">Yoga</option>
-        <option value="Outdoor Cycle">Outdoor Cycle</option>
-        <option value="Mixed Cardio">Mixed Cardio</option>
-        <option value="Volleyball">Volleyball</option>
-        <option value="Stair Stepper">Stair Stepper</option>
-        <option value="Indoor Walk">Indoor Walk</option>
-        <option value="Basketball">Basketball</option>
-        <option value="Skating">Skating</option>
-        <option value="Indoor Run">Indoor Run</option>
-        <option value="Hiking">Hiking</option>
-        <option value="Dance">Dance</option>
-        <option value="Elliptical">Elliptical</option>
-        <option value="Rowing">Rowing</option>
-        <option value="Swim">Swim</option>
-        <option value="Badminton">Badminton</option>
-        <option value="Barre">Barre</option>
-        <option value="Basketball">Basketball</option>
-        <option value="Kickboxing">Kickboxing</option>
-        <option value="Pilates">Pilates</option>
-        <option value="Soccer">Basketball</option>
-        <option value="Surfing">Surfing</option>
-        <option value="Tennis">Tennis</option>
-        <option value="Baseball">Baseball</option>
-        <option value="Football">Football</option>
-        <option value="Bowling">Bowling</option>
-        <option value="Boxing">Boxing</option>
-        <option value="Climbing">Climbing</option>
-        <option value="Gymnastics">Gymnastics</option>
-        <option value="Handball">Handball</option>
-        <option value="Hockey">Hockey</option>
-        <option value="Lacrosse">Sking</option>
-        <option value="Martial Arts">Martial Arts</option>
-        <option value="Racquetball">Racquetball</option>
-        <option value="Rugby">Rugby</option>
-        <option value="Snowboarding">Snowboarding</option>
-        <option value="Softball">Softball</option>
-        <option value="Stairs">Stairs</option>
-        <option value="Wrestling">Wrestling</option>
-        <option value="Water Polo">Water Polo</option>
-      </select>
-
-        <label for="workoutTargetedBodyArea">Enter targeted body area:</label>
-      <select name="workout[targetedBodyArea]" class="form-control">
-        <option value="Upper Body">Full Body</option>
-        <option value="Upper Body">Upper Body</option>
-        <option value="Lower Body">Lower Body</option>
-        <option value="Back">Back</option>
-        <option value="Triceps">Triceps</option>
-        <option value="Chest">Chest</option>
-        <option value="Shoulders">Shoulders</option>
-        <option value="Glutes">Glutes</option>
-        <option value="Upper Body">Upper Body</option>
-    </select>
-        <label for="workoutTimeSpent">Enter time spent in minutes:</label>
-        <input name="workout[timeSpent]" placeholder="Enter time spent on workout" type="number" class="form-control">
-
-        <label for="workoutCaloriesBurned">Enter calories burned:</label>
-        <input name="workout[caloriesBurned]" placeholder="Enter total calories burned" type="number" class="form-control">
-
-        <label for="workoutDate">Enter date:</label>
-        <input name="workout[workoutDate]" placeholder="Enter date of workout" type="date" class="form-control">
-
-        <button type="submit" class="btn-outline-primary form-control">Add Workout</button>
-      </form>
 
       <form id="view-workouts">
         <button type="submit" style="width: 500px; margin: auto" class="btn-outline-primary form-control" >View my workouts!</button>

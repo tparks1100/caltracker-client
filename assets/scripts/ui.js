@@ -35,12 +35,12 @@ const signInFailure = function () {
 }
 
 const changePasswordSuccess = function () {
-  $('#message').text('You successfully changed your password!')
+  $('#change-message').text('You successfully changed your password!')
   $('#change-password')[0].reset()
 }
 
 const changePasswordFailure = function () {
-  $('#message').text('Password was unable to be changed.')
+  $('#change-message').text('Password was unable to be changed.')
 }
 
 const signOutSuccess = function () {
@@ -56,7 +56,7 @@ const signOutFailure = function () {
 }
 
 const addWorkoutSuccess = function (response) {
-  $('#message').text('Workout added!')
+  $('#change-message2').text('Workout added!')
   // console.log(response)
   console.log(store.workout = response.workout)
   console.log(store.workout)
@@ -65,7 +65,7 @@ const addWorkoutSuccess = function (response) {
 }
 
 const addWorkoutFailure = function () {
-  $('#message').text('Workout was not added. Try again!')
+  $('#change-message2').text('Workout was not added. Try again!')
 }
 
 // const viewWorkoutsSuccess = function (response) {
