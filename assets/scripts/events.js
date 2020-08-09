@@ -73,9 +73,9 @@ const onDeleteWorkout = (event) => {
   const workoutId = $(event.target).closest('section').data('id')
   console.log(workoutId)
   api.deleteWorkout(workoutId)
-    .then(ui.updateWorkoutSuccess)
+    .then(ui.deleteWorkoutSuccess)
     .then(() => onViewWorkouts(event))
-    .catch(ui.updateWorkoutFailure)
+    .catch(ui.deleteWorkoutFailure)
 }
 
 const onUpdateWorkout = (event) => {
@@ -85,7 +85,6 @@ const onUpdateWorkout = (event) => {
   const formData = getFormFields(form)
   const id = $(event.target).closest('section').data('id')
   console.log(id)
-  console.log('this is in update workout ', formData)
   api.updateWorkout(id, formData)
     .then(ui.updateWorkoutSuccess)
     .catch(ui.updateWorkoutFailure)

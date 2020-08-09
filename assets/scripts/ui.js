@@ -4,11 +4,12 @@ const store = require('./store')
 
 const getWorkoutsTemplate = require('./templates/helpers/workout-listing.handlebars')
 
-$('.authenticated').hide()
+$('.viewWorkouts').hide()
+$('.navbar-toggler').hide()
 
 const signUpSuccess = function () {
   $('#message').text('Successfully signed up!')
-  $('.unauthenticated1').hide()
+  // $('.unauthenticated1').hide()
   $('#sign-up')[0].reset()
 }
 
@@ -24,11 +25,13 @@ const signInSuccess = function (response) {
   console.log('store: ', store)
   console.log('token: ', store.user.token)
 
-  $('.authenticated').show()
+  $('.viewWorkouts').show()
   $('.unauthenticated1').hide()
   $('.unauthenticated2').hide()
   $('#sign-in')[0].reset()
   $('#view-workouts').show()
+  $('.navbar-toggler').show()
+  $('.bg-light').show()
 }
 
 const signInFailure = function () {
@@ -50,6 +53,8 @@ const signOutSuccess = function () {
   $('.unauthenticated2').show()
   $('.content').hide()
   $('#view-workouts').hide()
+  $('.navbar-toggler').hide()
+  $('.bg-light').hide()
 }
 
 const signOutFailure = function () {
@@ -77,10 +82,27 @@ const viewWorkoutsSuccess = (response) => {
   $('.content').empty()
   $('.content').append(getWorkoutsHtml)
   $('.content').show()
+  console.log(response.workouts)
+  if (getWorkoutsHtml === '') {
+    $('.content').text('You have no workouts, add a new one!')
+  }
 }
 
-const viewWorkoutsFailure = function () {
-  $('.content').text('Unable to view workouts')
+const viewWorkoutsFailure = function (response) {
+  // console.log(store.workout)
+  // store.workout = response.workout
+  // if (store.workout === '') {
+  //   $('.content').text('You have no workouts, add a new one!')
+  // }
+}
+
+const updateWorkoutSuccess = function () {
+  $('#update-message').text('Workout updated! Click "view workouts" to see new updates.')
+  // $('#update-workout')[0].reset()
+}
+
+const updateWorkoutFailure = function () {
+  $('#update-message').text('Workout was not updated. Try again!')
 }
 
 module.exports = {
@@ -95,7 +117,9 @@ module.exports = {
   addWorkoutSuccess,
   addWorkoutFailure,
   viewWorkoutsSuccess,
-  viewWorkoutsFailure
+  viewWorkoutsFailure,
+  updateWorkoutSuccess,
+  updateWorkoutFailure
   // deleteWorkoutSuccess,
   // deleteWorkoutsFailure
 }
