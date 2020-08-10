@@ -1,13 +1,12 @@
 {{#each workouts as |workout|}}
   {{log workout}}
-  <div class="row row-cols-1 row-cols-md-3">
-    <div class="col mb-4">
   <!-- Card -->
-  <div class="card mb-4">
+  <div class="row">
+    <div class="col-4 col-4 col-4"
 
   <!--Card image-->
   <div class="view overlay">
-  <img class="card-img-top" src="https://i.imgur.com/VW6Jb8U.jpg"
+  <img class="card-img-top" src="https://i.imgur.com/qHas0bi.png"
     alt="Card image cap">
   <a href="#!">
     <div class="mask rgba-white-slight"></div>
@@ -24,7 +23,7 @@
       <h6>Calories Burned: {{workout.caloriesBurned}}</h6>
       <h6>Workout Date: {{workout.workoutDate}}</h6>
 
-      <button class="btn btn-outline-success update-btn" data-id="{{workout._id}}"<a href="/workouts/id" data-toggle="modal" data-target="#myModal3"</a>Update Workout</button>
+      <button class="btn btn-outline-secondary update-btn" data-id="{{workout._id}}"<a href="/workouts/id" data-toggle="modal" data-target="#myModal3"</a>Update Workout</button>
       <div class="modal fade modal2" id="myModal3">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
@@ -117,13 +116,11 @@
           </div>
           </div>
         </div>
-      <button class="btn btn-outline-danger delete-btn" data-id="{{workout._id}}">Delete Workout</button>
+      <button class="btn btn-outline-secondary delete-btn" data-id="{{workout._id}}">Delete Workout</button>
 
     </section>
   </div>
   </div>
   </div>
-</div>
-
 
   {{/each}}

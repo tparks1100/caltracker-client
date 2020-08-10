@@ -1,11 +1,54 @@
 @import '~bootstrap/scss/bootstrap';
 
+.basic-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+}
+
+body {
+  // background-color: #dedef0;
+  background-image: url('https://i.imgur.com/ullfmEZ.jpg');
+  background-size: cover;
+}
+
+.container {
+  color: #fa877f;
+}
+
 h1 {
   text-align: center;
 }
 
-.row {
-  display: flex;
+// .signup {
+//   margin-top: 30px;
+//   margin-bottom: 30px;
+// }
+//
+// .signin {
+//   margin-top: 30px;
+//   margin-bottom: 30px;
+// }
+
+.form-container {
+  background: #dedef0;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #ffad87;
+  margin: auto;
+}
+
+.form2-container {
+  background: #dedef0;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #ffad87;
+  margin: auto;
+}
+
+#view-workouts {
+  margin-bottom: 30px;
 }
 
 .btn-outline-primary {
@@ -16,14 +59,23 @@ h1 {
   color: #bd574e;
 }
 
-.container {
-  color: #fa877f;
-}
-
 .modal1 {
   color: #fa877f;
 }
 
 .modal2 {
   color: #fa877f;
+}
+
+.content {
+  display: grid;
+  margin: auto;
+}
+
+.delete-btn {
+  background-color: #fa877f;
+}
+
+.update-btn {
+  background-color: #fa877f;
 }
