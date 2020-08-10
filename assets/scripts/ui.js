@@ -88,7 +88,7 @@ const viewWorkoutsSuccess = (response) => {
   // $('.workout-section').append(getWorkoutsHtml)
   // console.log(response.workouts)
   if (response.workouts.length === 0) {
-    $('.content').text('You have no workouts, add a new one!')
+    $('.content').text('You have no workouts, add a new one by clicking on the icon in the top left and clicking "Add workout"!')
   }
   $('#message').hide()
 }
