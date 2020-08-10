@@ -1,11 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 
-// .basic-grid {
-//   display: grid;
-//   gap: 1rem;
-//   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-//
-// }
+.basic-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+}
 
 body {
   // background-color: #dedef0;

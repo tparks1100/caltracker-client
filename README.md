@@ -1,32 +1,28 @@
-# CalTracker API
+# CalTracker Client
 
-This application allows the user to do x, y, and z. Maybe here's a reason why I
-wanted to do this project, or came up with this idea.
+This application allows the logged in user to view, update, and delete workouts that he/she owns. The user is able to see all of their workouts they have done and can keep track of their workout log. The user can add various information about their workout including the category, targeted body area, time spent in minutes, calories burned and the date of the workout. When a user creates a workout he/she can make edits to update that particular workout entry and can also delete any workouts if need be.
 
 ## Important Links
 
-- [Other Repo](www.link.com)
-- [Deployed API](www.link.com)
-- [Deployed Client](www.link.com)
+- [CalTracker API Repo](https://github.com/tparks1100/caltracker-api)
+- [Deployed CalTracker API](https://secret-woodland-45312.herokuapp.com/)
+- [Deployed CalTracker Client](www.link.com)
 
 ## Planning Story
 
-Lorem ipsum dolor amet cloud bread letterpress squid actually, single-origin
-coffee williamsburg af poutine fingerstache austin semiotics paleo man braid
-vexillologist. Tumeric literally banjo pickled disrupt cold-pressed thundercats
-shoreditch try-hard health goth intelligentsia pop-up small batch skateboard
-farm-to-table. Meh tofu fam, direct trade tattooed stumptown etsy everyday
-carry activated charcoal. Neutra cornhole polaroid literally salvia, listicle
-tofu.
+Initially, what I wanted to do was to have a user add workouts and meals. For each day I Wanted to display to the user if they were at a calorie deficit or surplus. My project idea is a calorie tracker. I wanted to track the amount of calories burned and amount of calories consumed and compare the two to determine if a person was at a calorie deficit or calorie surplus for the day. I came up with this because I love fitness and I have an apple watch that tracks all of my calories burned throughout the day, but it doesn't compare the calories that I have consumed, and I think it is helpful to know if you are at a calorie surplus or deficit. People who have fitness goals like, gaining weight or losing weight would use it, and also those trying to maintain their current weight would use it.
 
 ### User Stories
 
-- As a user I want to sign in/up
-- As a user I want to Create a new < resource >
-- As a user I want to Read multiple < resources >
-- As a user I want to Read a single < resource >
-- As a user I want to Update a < resource > I own
-- As a user I want to Delete a < resource > I own
+![alt text](https://i.imgur.com/oQpvoJ4.jpg "Thula's User Stories")
+
+### Wireframes
+
+![alt text](https://i.imgur.com/MTu7zfm.png "Wire Frame 1")
+
+![alt text](https://i.imgur.com/Uu7j04o.png "Wire Frame 2")
+
+![alt text](https://i.imgur.com/7aUryOw.png "Wire Frame 3")
 
 ### Technologies Used
 
@@ -34,8 +30,13 @@ tofu.
 - HTML/CSS
 - Bootstrap
 - Javascript
+- Handlebars
+
+### Timetable
+
+![alt text](https://i.imgur.com/9oumRXe.png "Gantt Chart")
 
 ### Unsolved Problems
 
-- Still need to ....
-- Would like to eventually ....
+- Still need to figure out how to close my nav toggle when user clicks sign out. Now if user signs out, when they sign back in the navbar list is already expanded.
+- Allow user to see updated workout without having to click "View my workouts" button

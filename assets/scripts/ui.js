@@ -19,11 +19,11 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   $('#message').text('Successfully signed in!')
-  console.log(store)
+  // console.log(store)
   store.user = response.user
 
-  console.log('store: ', store)
-  console.log('token: ', store.user.token)
+  // console.log('store: ', store)
+  // console.log('token: ', store.user.token)
 
   $('.viewWorkouts').show()
   $('.unauthenticated1').hide()
@@ -50,13 +50,13 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function () {
-  $('message').text('Signed you out!')
   $('.unauthenticated1').show()
   $('.unauthenticated2').show()
   $('.content').hide()
   $('#view-workouts').hide()
   $('.navbar-toggler').hide()
   $('.bg-light').hide()
+  $('#message').hide()
 }
 
 const signOutFailure = function () {
@@ -64,12 +64,12 @@ const signOutFailure = function () {
 }
 
 const addWorkoutSuccess = function (response) {
-  $('#add-message').text('Workout added!')
+  $('#add-message').text('Workout added! Click View my workouts to see your new workout!')
   // console.log(response)
-  console.log(store.workout = response.workout)
-  console.log(store.workout)
-  console.log('store: ', store)
-  console.log('token: ', store.user.token)
+  // console.log(store.workout = response.workout)
+  // console.log(store.workout)
+  // console.log('store: ', store)
+  // console.log('token: ', store.user.token)
 
   $('#add-workout')[0].reset()
   $('#message').hide()
@@ -80,14 +80,14 @@ const addWorkoutFailure = function () {
 }
 
 const viewWorkoutsSuccess = (response) => {
-  console.log(response)
+  // console.log(response)
   const getWorkoutsHtml = getWorkoutsTemplate({ workouts: response.workouts })
   $('.content').empty()
   $('.content').append(getWorkoutsHtml)
   $('.content').show()
   // $('.workout-section').append(getWorkoutsHtml)
-  console.log(response.workouts)
-  if (getWorkoutsHtml === '') {
+  // console.log(response.workouts)
+  if (response.workouts.length === 0) {
     $('.content').text('You have no workouts, add a new one!')
   }
   $('#message').hide()
@@ -102,7 +102,7 @@ const viewWorkoutsFailure = function (response) {
 }
 
 const updateWorkoutSuccess = function () {
-  $('#update-message').text('Workout updated! Click "view workouts" to see new updates.')
+  $('#update-message').text('Workout updated! Click "view workouts" to see new changes.')
   // $('#update-workout')[0].reset()
   $('#message').hide()
 }

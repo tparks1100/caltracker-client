@@ -1,13 +1,12 @@
 <div class="row">
 {{#each workouts as |workout|}}
-  {{log workout}}
   <!-- Card -->
     <div class="col-lg-4">
-      <div class="card columns workoutCard">
+      <div class="card narrower columns workoutCard">
 
   <!--Card image-->
   <div class="view view-cascade overlay">
-  <img class="card-img-top" src="https://i.imgur.com/qHas0bi.png"
+  <img class="card-img-top" src="public/images/prettyyogachick.png"
     alt="Card image cap">
   <a href="#!">
     <div class="mask rgba-white-slight"></div>
@@ -30,10 +29,10 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1>Update Workout</h1>
+              <p id="update-message"></p>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-              <p id="update-message"></p>
             </div>
             <div class="modal-body">
               <form class="update-workout" action="" style="width: 500px; margin: auto">

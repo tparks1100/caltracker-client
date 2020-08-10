@@ -71,7 +71,7 @@ const onViewWorkouts = function (event) {
 const onDeleteWorkout = (event) => {
   event.preventDefault()
   const workoutId = $(event.target).closest('section').data('id')
-  console.log(workoutId)
+  // console.log(workoutId)
   api.deleteWorkout(workoutId)
     .then(ui.deleteWorkoutSuccess)
     .then(() => onViewWorkouts(event))
@@ -84,7 +84,7 @@ const onUpdateWorkout = (event) => {
   const form = event.target
   const formData = getFormFields(form)
   const id = $(event.target).closest('section').data('id')
-  console.log(id)
+  // console.log(id)
   api.updateWorkout(id, formData)
     .then(ui.updateWorkoutSuccess)
     .catch(ui.updateWorkoutFailure)
