@@ -9,8 +9,8 @@ $('.navbar-toggler').hide()
 
 const signUpSuccess = function () {
   $('#message').text('Successfully signed up!')
-  // $('.unauthenticated1').hide()
   $('#sign-up')[0].reset()
+  $('#message').show()
 }
 
 const signUpFailure = function () {
@@ -32,6 +32,7 @@ const signInSuccess = function (response) {
   $('#view-workouts').show()
   $('.navbar-toggler').show()
   $('.bg-light').show()
+  $('#message').show()
 }
 
 const signInFailure = function () {
@@ -41,6 +42,7 @@ const signInFailure = function () {
 const changePasswordSuccess = function () {
   $('#change-message').text('You successfully changed your password!')
   $('#change-password')[0].reset()
+  $('#message').hide()
 }
 
 const changePasswordFailure = function () {
@@ -70,6 +72,7 @@ const addWorkoutSuccess = function (response) {
   console.log('token: ', store.user.token)
 
   $('#add-workout')[0].reset()
+  $('#message').hide()
 }
 
 const addWorkoutFailure = function () {
@@ -82,10 +85,12 @@ const viewWorkoutsSuccess = (response) => {
   $('.content').empty()
   $('.content').append(getWorkoutsHtml)
   $('.content').show()
+  // $('.workout-section').append(getWorkoutsHtml)
   console.log(response.workouts)
   if (getWorkoutsHtml === '') {
     $('.content').text('You have no workouts, add a new one!')
   }
+  $('#message').hide()
 }
 
 const viewWorkoutsFailure = function (response) {
@@ -99,6 +104,7 @@ const viewWorkoutsFailure = function (response) {
 const updateWorkoutSuccess = function () {
   $('#update-message').text('Workout updated! Click "view workouts" to see new updates.')
   // $('#update-workout')[0].reset()
+  $('#message').hide()
 }
 
 const updateWorkoutFailure = function () {

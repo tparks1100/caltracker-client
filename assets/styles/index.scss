@@ -1,15 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
 
-.basic-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-
-}
+// .basic-grid {
+//   display: grid;
+//   gap: 1rem;
+//   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+//
+// }
 
 body {
   // background-color: #dedef0;
-  background-image: url('https://i.imgur.com/ullfmEZ.jpg');
+  background-image: url('public/images/pinkdumbbellbackground.jpg');
   background-size: cover;
 }
 
@@ -45,6 +45,10 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px #ffad87;
   margin: auto;
+}
+
+.workoutCard {
+  margin: 10px;
 }
 
 #view-workouts {
