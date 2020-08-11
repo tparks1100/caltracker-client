@@ -39,5 +39,4 @@ Initially, what I wanted to do was to have a user add workouts and meals. For ea
 
 ### Unsolved Problems
 
-- Still need to figure out how to close my nav toggle when user clicks sign out. Now if user signs out, when they sign back in the navbar list is already expanded.
 - Allow user to see updated workout without having to click "View my workouts" button

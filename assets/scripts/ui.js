@@ -64,7 +64,7 @@ const signOutFailure = function () {
 }
 
 const addWorkoutSuccess = function (response) {
-  $('#add-message').text('Workout added! Click View my workouts to see your new workout!')
+  $('#add-message').text('Workout added! Click "View my workouts" to see your new workout!')
   // console.log(response)
   // console.log(store.workout = response.workout)
   // console.log(store.workout)
@@ -87,7 +87,7 @@ const viewWorkoutsSuccess = (response) => {
   // $('.workout-section').append(getWorkoutsHtml)
   // console.log(response.workouts)
   if (response.workouts.length === 0) {
-    $('.content').text('You have no workouts, add a new one by clicking on the icon in the top left and clicking "Add workout"!')
+    $('.content').text('You have no workouts, add a new one by clicking on the icon in the top left and clicking "Add New Workout"!')
   }
   $('#message').hide()
 }
