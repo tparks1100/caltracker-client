@@ -20,4 +20,8 @@ $(() => {
   $('#view-workouts').on('click', authEvents.onViewWorkouts)
   $('.content').on('click', '.delete-btn', authEvents.onDeleteWorkout)
   $('.content').on('submit', '.update-workout', authEvents.onUpdateWorkout)
+  $('.close').on('click', authEvents.onCloseNavForms)
+  $('#myModal2').modal({ backdrop: 'static', keyboard: false, show: false })
+  $('#myModal').modal({ backdrop: 'static', keyboard: false, show: false })
+  $('.nav-link').on('click', function () { $('.collapse').collapse('hide') })
 })

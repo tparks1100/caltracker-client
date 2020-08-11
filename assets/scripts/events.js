@@ -90,6 +90,12 @@ const onUpdateWorkout = (event) => {
     .catch(ui.updateWorkoutFailure)
 }
 
+const onCloseNavForms = function (event) {
+  event.preventDefault()
+  $('#add-message').text('')
+  $('#change-message').text('')
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -98,5 +104,6 @@ module.exports = {
   onAddWorkout,
   onViewWorkouts,
   onDeleteWorkout,
-  onUpdateWorkout
+  onUpdateWorkout,
+  onCloseNavForms
 }
