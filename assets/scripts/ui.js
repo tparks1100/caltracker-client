@@ -65,7 +65,6 @@ const signOutFailure = function () {
 
 const addWorkoutSuccess = function (response) {
   $('#add-message').text('Workout added! Click View my workouts to see your new workout!')
-  $('#add-message').show()
   // console.log(response)
   // console.log(store.workout = response.workout)
   // console.log(store.workout)
@@ -73,7 +72,6 @@ const addWorkoutSuccess = function (response) {
   // console.log('token: ', store.user.token)
   $('#message').hide()
   $('#add-workout')[0].reset()
-  $('#add-message').hide().on('click', '.addWorkout')
 }
 
 const addWorkoutFailure = function () {
