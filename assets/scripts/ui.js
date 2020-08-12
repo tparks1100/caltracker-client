@@ -22,8 +22,8 @@ const signInSuccess = function (response) {
   // console.log(store)
   store.user = response.user
 
-  console.log('store: ', store)
-  console.log('token: ', store.user.token)
+  // console.log('store: ', store)
+  // console.log('token: ', store.user.token)
 
   $('.viewWorkouts').show()
   $('.unauthenticated1').hide()
@@ -65,11 +65,11 @@ const signOutFailure = function () {
 
 const addWorkoutSuccess = function (response) {
   $('#add-message').text('Workout added! Click "View my workouts" to see your new workout!')
-  console.log(response)
+  // console.log(response)
   // console.log(store.workout = response.workout)
-  console.log(store.workout)
-  console.log('store: ', store)
-  console.log('token: ', store.user.token)
+  // console.log(store.workout)
+  // console.log('store: ', store)
+  // console.log('token: ', store.user.token)
   $('#message').hide()
   $('#add-workout')[0].reset()
 }

@@ -76,7 +76,7 @@ const deleteWorkout = (workoutId) => {
 }
 
 const updateWorkout = function (workoutId, formData) {
-  console.log('update workout ', workoutId, formData)
+  // console.log('update workout ', workoutId, formData)
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
