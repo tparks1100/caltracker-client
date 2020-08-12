@@ -57,10 +57,12 @@ const signOutSuccess = function () {
   $('#view-workouts').hide()
   $('.navbar-toggler').hide()
   $('.bg-light').hide()
+  $('#message').show()
 }
 
 const signOutFailure = function () {
   $('#message').text('Sign out failed.')
+  $('#message').show()
 }
 
 const addWorkoutSuccess = function (response) {
