@@ -10,7 +10,6 @@ $('.navbar-toggler').hide()
 const signUpSuccess = function () {
   $('#message').text('Successfully signed up!')
   $('#sign-up')[0].reset()
-  $('#message').show()
 }
 
 const signUpFailure = function () {
@@ -37,6 +36,7 @@ const signInSuccess = function (response) {
 
 const signInFailure = function () {
   $('#message').text('Sign in failed!')
+  $('#message').show()
 }
 
 const changePasswordSuccess = function () {
@@ -50,13 +50,13 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function () {
+  $('#message').text('Signed out successfully! Remember to stay fit!')
   $('.unauthenticated1').show()
   $('.unauthenticated2').show()
   $('.content').hide()
   $('#view-workouts').hide()
   $('.navbar-toggler').hide()
   $('.bg-light').hide()
-  $('#message').hide()
 }
 
 const signOutFailure = function () {
