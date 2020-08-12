@@ -6,7 +6,7 @@ This application allows the logged in user to view, update, and delete workouts 
 
 - [CalTracker API Repo](https://github.com/tparks1100/caltracker-api)
 - [Deployed CalTracker API](https://secret-woodland-45312.herokuapp.com/)
-- [Deployed CalTracker Client](www.link.com)
+- [Deployed CalTracker Client](https://tparks1100.github.io/caltracker-client/)
 - [Project Checklist](https://docs.google.com/document/d/1TgNjcn1Za-MQmTzHzCYacxd1qHZ2cKKzL7UNC4PEh1g/edit?usp=sharing)
 
 ## Planning Story
