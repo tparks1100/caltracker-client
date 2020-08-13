@@ -58,6 +58,8 @@ const signOutSuccess = function () {
   $('.navbar-toggler').hide()
   $('.bg-light').hide()
   $('#message').show()
+  $('#add-workout')[0].reset()
+  $('#change-password')[0].reset()
 }
 
 const signOutFailure = function () {
