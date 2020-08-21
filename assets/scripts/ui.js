@@ -2,10 +2,16 @@
 
 const store = require('./store')
 
+const authEvents = require('./events')
+
+const eventsRefresh = require('./eventsRefresh')
+
 const getWorkoutsTemplate = require('./templates/helpers/workout-listing.handlebars')
 
 $('.viewWorkouts').hide()
 $('.navbar-toggler').hide()
+$('.update-message').hide()
+$('.delete-message').hide()
 
 const signUpSuccess = function () {
   $('#message').text('Successfully signed up!')
@@ -43,6 +49,8 @@ const changePasswordSuccess = function () {
   $('#change-message').text('You successfully changed your password!')
   $('#change-password')[0].reset()
   $('#message').hide()
+  $('.update-message').hide()
+  $('.delete-message').hide()
 }
 
 const changePasswordFailure = function () {
@@ -50,7 +58,7 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function () {
-  $('#message').text('Signed out successfully! Remember to stay fit!')
+  $('#message').text('Signed out successfully! Remember to stay fit!💪🏽')
   $('.unauthenticated1').show()
   $('.unauthenticated2').show()
   $('.content').hide()
@@ -60,6 +68,8 @@ const signOutSuccess = function () {
   $('#message').show()
   $('#add-workout')[0].reset()
   $('#change-password')[0].reset()
+  $('.update-message').hide()
+  $('.delete-message').hide()
 }
 
 const signOutFailure = function () {
@@ -68,7 +78,7 @@ const signOutFailure = function () {
 }
 
 const addWorkoutSuccess = function (response) {
-  $('#add-message').text('Workout added! Click "View my workouts" to see your new workout!')
+  $('#add-message').text('Workout added!')
   // console.log(response)
   // console.log(store.workout = response.workout)
   // console.log(store.workout)
@@ -76,6 +86,8 @@ const addWorkoutSuccess = function (response) {
   // console.log('token: ', store.user.token)
   $('#message').hide()
   $('#add-workout')[0].reset()
+  $('.update-message').hide()
+  $('.delete-message').hide()
 }
 
 const addWorkoutFailure = function () {
@@ -85,15 +97,20 @@ const addWorkoutFailure = function () {
 const viewWorkoutsSuccess = (response) => {
   // console.log(response)
   const getWorkoutsHtml = getWorkoutsTemplate({ workouts: response.workouts })
+  // $('#update-close').on('click', authEvents.onCloseNavForms)
+  // eventsRefresh.onViewWorkouts()
   $('.content').empty()
   $('.content').append(getWorkoutsHtml)
   $('.content').show()
+  // $('[data-modal=hbModal]').modal({ backdrop: 'static', keyboard: false, show: false })
   // $('.workout-section').append(getWorkoutsHtml)
   // console.log(response.workouts)
   if (response.workouts.length === 0) {
     $('.content').text('You have no workouts, add a new one by clicking on the icon in the top left and clicking "Add New Workout"!')
   }
   $('#message').hide()
+  $('.update-message').hide()
+  $('.delete-message').hide()
 }
 
 const viewWorkoutsFailure = function (response) {
@@ -105,12 +122,26 @@ const viewWorkoutsFailure = function (response) {
 }
 
 const updateWorkoutSuccess = function () {
-  $('.update-message').text('Workout updated! Click "view workouts" to see new changes.')
-  $('#message').hide()
+  $('.update-message').show()
+  $('.update-message').text('Workout updated!🤸🏽‍♂️')
+  $('#update-close').on('click', authEvents.onCloseNavForms)
+  eventsRefresh.onViewWorkouts()
+  $('.updateModal').modal('hide')
+  $('.modal-backdrop').remove()
+  $('body').css('overflow-y', 'auto')
 }
 
 const updateWorkoutFailure = function () {
   $('.update-message').text('Workout was not updated. Try again!')
+}
+
+const deleteWorkoutSuccess = function () {
+  $('.delete-message').show()
+  $('.delete-message').text('Workout deleted!')
+}
+
+const deleteWorkoutFailure = function () {
+  $('.delete-message').text('Workout was not deleted. Try again!')
 }
 
 module.exports = {
@@ -127,7 +158,7 @@ module.exports = {
   viewWorkoutsSuccess,
   viewWorkoutsFailure,
   updateWorkoutSuccess,
-  updateWorkoutFailure
-  // deleteWorkoutSuccess,
-  // deleteWorkoutsFailure
+  updateWorkoutFailure,
+  deleteWorkoutSuccess,
+  deleteWorkoutFailure
 }

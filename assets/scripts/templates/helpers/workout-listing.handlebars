@@ -25,12 +25,12 @@
       <h6>Workout ID: {{workout._id}}</h6>
 
       <button class="btn btn-outline-secondary update-btn"<a href="/workouts/id" data-toggle="modal" data-target="#myModal3-{{workout._id}}"</a>Update Workout</button>
-      <div class="modal fade modal2" id="myModal3-{{workout._id}}">
+      <div class="modal fade modal2 updateModal" id="myModal3-{{workout._id}}">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
               <h1>Update Workout</h1>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button id="update-close" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
             </div>

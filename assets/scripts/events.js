@@ -3,6 +3,8 @@
 const api = require('./api')
 const ui = require('./ui')
 
+const eventsRefresh = require('./eventsRefresh')
+
 const getFormFields = require('../../lib/get-form-fields')
 
 const onSignUp = function (event) {
@@ -54,7 +56,6 @@ const onAddWorkout = function (event) {
 
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
 
   api.addWorkout(formData)
     .then(ui.addWorkoutSuccess)
@@ -96,6 +97,8 @@ const onCloseNavForms = function (event) {
   event.preventDefault()
   $('#add-message').text('')
   $('#change-message').text('')
+  $('#update-message').text('')
+  eventsRefresh.onViewWorkouts()
 }
 
 module.exports = {
